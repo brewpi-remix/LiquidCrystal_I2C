@@ -52,7 +52,7 @@ LiquidCrystal_I2C::LiquidCrystal_I2C(uint8_t lcd_Addr, uint8_t lcd_cols, uint8_t
 
 byte LiquidCrystal_I2C::scan_address(byte address)
 {
-	if (address)
+	if (address != 0x0)
 		_Addr = address;
 	else
 	{

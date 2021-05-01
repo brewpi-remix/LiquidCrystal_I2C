@@ -4,6 +4,7 @@
 #include <inttypes.h>
 #include "Print.h"
 #include <Wire.h>
+#include <Arduino.h>
 
 // commands
 #define LCD_CLEARDISPLAY 0x01
@@ -55,7 +56,7 @@ class LiquidCrystal_I2C : public Print
 {
 public:
     LiquidCrystal_I2C(uint8_t lcd_Addr, uint8_t lcd_cols, uint8_t lcd_rows);
-    byte scan_address(byte address = NULL);
+    byte scan_address(byte address = 0x0);
     void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
     void clear();
     void home();
